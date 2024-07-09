@@ -14,14 +14,14 @@ npm install
 
 To use this client, follow these steps:
 
-1. Import the necessary modules:
+1.Import the necessary modules:
 
 ```javascript
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
 ```
 
-2. Load the gRPC proto file:
+2.Load the gRPC proto file:
 
 ```javascript
 const packageDefinition = protoLoader.loadSync('path/to/proto/file.proto');
@@ -29,13 +29,13 @@ const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
 const api = protoDescriptor.api;
 ```
 
-3. Create a gRPC client:
+3.Create a gRPC client:
 
 ```javascript
 const client = new api.MyService('localhost:50051', grpc.credentials.createInsecure());
 ```
 
-4. Call the desired methods:
+4.Call the desired methods:
 
 ```javascript
 client.someMethod({ param1: 'value1', param2: 'value2' }, (error, response) => {
